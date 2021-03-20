@@ -1,0 +1,30 @@
+{
+  "name": "bot_disc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js --watch src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoDGeneos/botdiscord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoDGeneos/botdiscord/issues"
+  },
+  "homepage": "https://github.com/DoDGeneos/botdiscord#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
