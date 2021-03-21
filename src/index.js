@@ -3,18 +3,21 @@ const dotevn = require("dotenv");
 const fs = require("fs");
 const path = require("path");
 
-
+// Configura variaveis 
 dotevn.config();
 
-
+// Instancia um bot
 const bot = new Discord.Client();
 
+// Cria uma colecao para os comandos
 bot.commands = new Discord.Collection(); // Conjunto de comandos do bot
 
+// Configura os caminhos de diretorios
 const commandsFiles = fs
     .readdirSync(path.join(__dirname, "/commands")) 
     .filter((filename) => filename.endsWith(".js")) // concatena diretorio atual com o commands
 
+    
 // Carrega os comandos dos arquivo para a lista de comandos do bot
 for(var filename of commandsFiles){
     const command = require(`./commands/${filename}`);
@@ -41,7 +44,6 @@ bot.on("message", (msg) => {
 
     try {
         bot.commands.get(command).execute(bot, msg, args);
-        console.log("Boa ", command)
     } catch (error) {
         console.log("Erro: ",command)
         console.log(error)
